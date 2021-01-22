@@ -1,6 +1,6 @@
 const express = require("express");
 const app  = express();
-const port = 3000;
+const port = 8080;
 
 // POST された JSON を req.body で操作可能にする
 app.use(express.json());
