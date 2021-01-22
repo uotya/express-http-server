@@ -3,9 +3,8 @@ const app  = express();
 const port = 3000;
 
 // ルーティングの設定
-app.get("/", (req, res) =>{
-  res.sendFile(`${__dirname}/public/index.html`)
-  console.log("/ へアクセスがありました");
+app.get("/", (req, res) => {
+  res.json({ "text": "hello world" })
 });
 
 // HTTPサーバを起動する
