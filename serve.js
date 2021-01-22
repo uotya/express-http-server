@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 app.post('/', (req, res) => {
   if (req.is('application/json')) {
-    res.send(req.body);
+    res.status(201).send(req.body);
   } else {
     const err = new Error('Invalid Content-Type');
     console.log(err);
