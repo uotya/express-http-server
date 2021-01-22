@@ -13,9 +13,9 @@ app.post('/', (req, res) => {
   if (req.is('application/json')) {
     res.status(201).send(req.body);
   } else {
-    const err = new Error('Invalid Content-Type');
-    console.log(err);
-    res.status(400).send({ error: err });
+    const error = new Error('Invalid Content-Type');
+    console.log(error);
+    res.status(400).send({ error: error.message });
   }
 });
 
