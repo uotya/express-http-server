@@ -10,7 +10,13 @@ app.get("/", (req, res) => {
   res.json({ "text": "hello world" })
 });
 app.post('/', (req, res) => {
-  res.send(req.body);
+  if (req.is('application/json')) {
+    res.send(req.body);
+  } else {
+    const err = new Error('Invalid Content-Type');
+    console.log(err);
+    res.status(400).send({ error: err });
+  }
 });
 
 // HTTP サーバを起動する
