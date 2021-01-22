@@ -4,7 +4,7 @@ const port = 3000;
 
 // ルーティングの設定
 app.get("/", (req, res) =>{
-  res.send('Hello World!');
+  res.sendFile(`${__dirname}/public/index.html`)
   console.log("/ へアクセスがありました");
 });
 
